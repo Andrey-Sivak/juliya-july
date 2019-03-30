@@ -13,8 +13,27 @@ function get_images($dir) {
 	return $files;
 }
 
-$dir = "../img/photos/familyes/";
+$gallery = isset($_GET['gallery']) ? (int) $_GET['gallery'] : 1;
+if($gallery < 1) $gallery = 1;
+if($gallery > 4) $gallery = 4;
+
+switch($gallery)
+	{
+		case '1':
+			$gallery_dir = "individual/";
+			break;
+		case '2':
+			$gallery_dir = "familyes/";
+			break;
+		case '3':
+			$gallery_dir = "other/";
+			break;
+	};
+	
+$dir = "../img/photos/" . $gallery_dir;
 $images = get_images($dir);
+
+
 
 ?>
 
@@ -32,32 +51,18 @@ $images = get_images($dir);
 	<script type="text/javascript" src="js/portfolio.js"></script>
 </head>
 <body>
-	<header class="heading">
-		<a href="index.html" class="heading__logo">
-			<img src="../img/logo.svg" class="heading__logo-img">
-		</a>
-		<ul class="heading__menu">
-			<li><a href="index.html">главная</a></li>
-			<li><a href="../pages/portfolio.php">портфолио</a></li>
-			<li><a href="../pages/coasts.html">цены и акции</a></li>
-			<li><a href="../pages/about_me.html">обо мне</a></li>
-			<li><a href="../pages/rewiews.html">отзывы</a></li>
-			<li><a href="../pages/registration.html">записаться</a></li>
-		</ul>
-		<div>
-			<a class="heading__phone" href="tel://+79787625391">+7(978)-76-25-391</a>
-			<p class="heading__location">г. Севастополь, Крым</p>
-		</div>
-	</header>
-	<hr>
+
+	<?php require_once "../includes/header.php"; ?>
 
 	<main class="portfolio">
+		
 		<div class="categories">
-			<a href="#" class="categories__item" id="individ">индивидуальные</a>
-			<a href="#" class="categories__item" id="familyes">семейные</a>
-			<a href="" class="categories__item" id="other">разное</a>
-			<a href="" class="categories__item" id="all">все</a>
+			<a href="http://juliya-july/pages/portfolio.php?gallery=1" class="categories__item" id="individ">индивидуальные</a>
+			<a href="http://juliya-july/pages/portfolio.php?gallery=2" class="categories__item" id="familyes">семейные</a>
+			<a href="http://juliya-july/pages/portfolio.php?gallery=3" class="categories__item" id="other">разное</a>
+			<a href="http://juliya-july/pages/portfolio.php?gallery=4" class="categories__item" id="all">все</a>
 		</div>
+
 		<div class="wrap">
 			<?php if ($images): ?>
 			<?php foreach ($images as $image):?>
@@ -69,11 +74,10 @@ $images = get_images($dir);
 			<p>в данной галерее нет фотографий</p>
 			<?php endif; ?>
 		</div>
+
 	</main>
 
-	<footer class="footer">
-		<p>Juliya July - индивидуальные фотосессии в Крыму и Севастополе</p>
-		<p class="footer__copy">&copy; Все изображения защищены авторским правом</p>
-	</footer>
+	<?php require_once "../includes/footer.php"; ?>
+
 </body>
 </html>
