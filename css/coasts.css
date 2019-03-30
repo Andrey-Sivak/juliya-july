@@ -1,0 +1,48 @@
+.content {
+	margin: 30px 200px;
+}
+
+.content p {
+	font-size:  30px;
+	margin-bottom: 30px;
+}
+
+.h1 {
+	text-align: center;
+	font-size: 40px;
+	text-transform: uppercase;
+}
+
+.h1:before,
+.h1:after {
+	content: '';
+	height: 3px;
+	background: #fff;
+	display: inline-block;
+	width: 35%;
+	vertical-align: middle;
+	border: solid #f4ccc9;
+	border-width: 12px;
+}
+
+.h1:before {
+	margin-left: -100%;
+}
+
+.h1:after {
+	margin-right: -100%
+}
+
+.coast_item {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	-ms-align-items: center;
+	align-items: center;
+}
+
+.coast_item img {
+	margin-right: 20px;
+}

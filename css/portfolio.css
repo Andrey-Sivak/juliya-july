@@ -1,0 +1,31 @@
+.categories {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	justify-content: space-around;
+	margin: 30px 500px;
+}
+
+.categories__item {
+	font-size: 30px;
+	color: #333;
+	text-decoration: none;
+	background: #fff;
+	padding: 0 4px;
+	border-radius: 8px;
+	border-bottom: 1px solid;
+}
+.categories__item:hover {
+	border: none;
+}
+
+.wrap {
+	margin: 0 120px;
+}
+
+.wrap__item_img {
+	width: 250px;
+	box-shadow: 0 5px 10px #888;
+}
