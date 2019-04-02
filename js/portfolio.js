@@ -1,7 +1,7 @@
 
 window.onload = function() {
 
-	const cat = document.getElementsByClassName('categories')[0];
+	/*const cat = document.getElementsByClassName('categories')[0];
 	const btnIndivid = document.getElementById('individ');
 	const btnFamilyes = document.getElementById('familyes');
 	const btnOther = document.getElementById('other');
@@ -24,14 +24,14 @@ window.onload = function() {
 				console.log(123);
 				break;
 		}
-	});
+	});*/
 
 	(function() {
 
 		const masonry = new Macy({
 
 			container: '.wrap',
-			columns: 6,
+			columns: 5,
 			margin: {
 				x: '3%',
 				y: 15

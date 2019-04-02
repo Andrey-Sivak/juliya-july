@@ -17,8 +17,10 @@ $gallery = isset($_GET['gallery']) ? (int) $_GET['gallery'] : 1;
 if($gallery < 1) $gallery = 1;
 if($gallery > 4) $gallery = 4;
 
-switch($gallery)
-	{
+// output photos by categories
+function out_cat_images($gallery) {
+
+	switch($gallery) {
 		case '1':
 			$gallery_dir = "individual/";
 			break;
@@ -29,10 +31,27 @@ switch($gallery)
 			$gallery_dir = "other/";
 			break;
 	};
-	
-$dir = "../img/photos/" . $gallery_dir;
-$images = get_images($dir);
 
+	$dir = "../img/photos/" . $gallery_dir;
+	$images_output = get_images($dir);
+
+	if($images_output) {
+		foreach($images_output as $image) {
+			echo "<div class='wrap__item'>";
+				echo "<img src='" . $dir . $image . "' class='wrap__item_img'>";
+			echo "</div>";
+		}
+	} else {
+		echo "<p>в данной галерее нет фотографий</p>";
+	}
+}
+
+function out_all_images() {
+	$gallery = 1;
+	for ($gallery = 1; $gallery < 4; $gallery++) { 
+		out_cat_images($gallery);
+	}
+}
 
 
 ?>
@@ -64,15 +83,15 @@ $images = get_images($dir);
 		</div>
 
 		<div class="wrap">
-			<?php if ($images): ?>
-			<?php foreach ($images as $image):?>
-				<div class="wrap__item">
-					<img src="<?=$dir . $image?>" class="wrap__item_img">
-				</div>
-			<?php endforeach; ?>
-			<?php else: ?>
-			<p>в данной галерее нет фотографий</p>
-			<?php endif; ?>
+
+			<!-- <?
+			if($gallery < 4){
+				out_cat_images($gallery);
+			} else {
+				out_all_images();
+			}
+			?> -->
+			
 		</div>
 
 	</main>

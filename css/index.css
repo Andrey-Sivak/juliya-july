@@ -5,6 +5,7 @@
 
 .prev,
 .next {
+	user-select: none;
 	position: absolute;
 	width: 75px;
 	top: 50%;

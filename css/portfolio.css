@@ -15,7 +15,7 @@
 	background: #fff;
 	padding: 0 4px;
 	border-radius: 8px;
-	border-bottom: 1px solid;
+	border-bottom: 1.5px solid;
 }
 .categories__item:hover {
 	border: none;
@@ -26,6 +26,6 @@
 }
 
 .wrap__item_img {
-	width: 250px;
+	width: 310px;
 	box-shadow: 0 5px 10px #888;
 }
