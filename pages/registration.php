@@ -50,7 +50,7 @@
 					<option>love story</option>
 					<option>семейная</option>
 				</select>
-				<label class="label">выбирите фотосессию:</label>
+				<label class="label">Вид фотосессии:</label>
 			</div>
 			<div class="form-item">
 				<button  type="submit" class="button" id="submit">отправить</button>

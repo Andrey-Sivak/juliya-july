@@ -3,6 +3,7 @@
  ?>
 
 <header class="heading">
+	<div class="heading__wrapper">
 		<a href="../index.php" class="heading__logo">
 			<img src="../img/logo.svg" class="heading__logo-img">
 		</a>
@@ -14,9 +15,9 @@
 			<li><a href="pages/rewiews.php">отзывы</a></li>
 			<li><a href="pages/registration.php">записаться</a></li>
 		</ul>
-		<div>
+		<div class="heading__contact">
 			<a class="heading__phone" href="tel://+79787625391">+7(978)-76-25-391</a>
 			<p class="heading__location">г. Севастополь, Крым</p>
 		</div>
-	</header>
-	<hr>
+	</div>
+</header>

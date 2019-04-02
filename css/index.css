@@ -64,3 +64,9 @@
 .s-notransition {
 	transition: 0s;
 }
+
+@media(max-width: 1328px) {
+	.wrap {
+		width: 100vw;
+	}
+}
